@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vu</title>
+	<meta charset="UTF-8">
+	<meta NAME="COPYRIGHT" CONTENT="&copy; 2018 Vu Nguyen">
+	<meta name="author" content="Vu Nguyen">
+	<meta name="keywords" content="Vu, Nguyen, personal, portfolio">
+	<meta name="description" content="I'm Vu Nguyen. I'm still adding stuffs to my portfolio. This is version 1.0.6.1 ">
+
+	<meta property="og:image" content="https://nguyen.vu/favicon.png"/>
+	<meta property="og:title" content="Vu Nguyen"/>
+	<meta property="og:description" content="Vu Nguyen's website"/>
+
+	<meta http-equiv="Cache-Control" content="max-age=2700"/>
+	<meta http-equiv="refresh" content="1800"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<link rel="image_src" href="https://nguyen.vu/favicon.ico"/>
+
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.png"/>
+
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.9/jquery.fullPage.min.css"/>
+	<link rel="stylesheet" type="text/css" href="X.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="X.min.css"/> -->
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/2.5.9/vendors/jquery.easings.min.js"></script>
+	<script type="text/javascript" src="https://nguyen.vu/jquery.fullPage.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// var Detector=function(){function i(b){var c=!1;for(var h in a){e.style.fontFamily=b+","+a[h],d.appendChild(e);var i=e.offsetWidth!=f[a[h]]||e.offsetHeight!=g[a[h]];d.removeChild(e),c=c||i}return c}var a=["monospace","sans-serif","serif"],b="mmmmmmmmmmlli",c="72px",d=document.getElementsByTagName("body")[0],e=document.createElement("span");e.style.fontSize=c,e.innerHTML=b;var f={},g={};for(var h in a)e.style.fontFamily=a[h],d.appendChild(e),f[a[h]]=e.offsetWidth,g[a[h]]=e.offsetHeight,d.removeChild(e);this.detect=i},detective=new Detector;1!=detective.detect("Helvetica Neue")&&(WebFontConfig={google:{families:["Roboto:400,100,400italic,700:latin,vietnamese"]}},function(){var a=document.createElement("script");a.src=("https:"==document.location.protocol?"https":"http")+"://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js",a.type="text/javascript",a.async="true";var b=document.getElementsByTagName("script")[0];b.parentNode.insertBefore(a,b)}(),$("html").css("font-family","Roboto"),$("body").css("font-family","Roboto"));
+			$('#fullpage').fullpage({
+				scrollingSpeed: 550,
+				resize: false,
+				afterLoad: function(anchorLink, index){
+					if(index == '2'){
+						// $(".nav .one").css("display","none");
+				    	// $(".nav .two").css("display","block");
+			            $(".nav .one").removeClass("nav_show");
+			            $(".nav .two").addClass("nav_show");
+					};
+					if(index == '1'){
+						// $(".nav .one").css("display","block");
+						// $(".nav .two").css("display","none");
+						$(".nav .two").removeClass("nav_show");
+			            $(".nav .one").addClass("nav_show");
+					};
+		        },
+			});
+		});
+		$(window).load(function(){
+			setTimeout(function(){
+		        $('body').addClass('loaded');
+		        $(".nav .one").addClass("nav_show");
+		    }, 250);
+			// getLocation();
+		});
+	</script>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125421060-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-125421060-1');
+	</script>
+</head>
+<body>
+<div id="loader-wrapper">
+    <div id="loader"></div>
+</div>
+<div id="Acks">
+			This website was made using jQuery library and these plugins:<br><br>
+			<ul>
+				<li>FullPage by Alvaro Trigo https://github.com/alvarotrigo/fullPage.js</li>
+				<li>Detect system font http://www.lalit.org/lab/javascript-css-font-detect/</li>
+				<li>Calculate distance http://www.movable-type.co.uk/scripts/latlong.html</li>
+			</ul>
+			<br>I also asked Dr. Michael S. Parks to help me with some of the Javascript problems.<br><br>
+			<button onclick="closeA()">
+				<u><i>Close</i></u>
+			</button><br>
+</div>
+<!-- <div class="nav">
+	<div class="one">Scroll
+		<a onclick="$.fn.fullpage.moveSectionDown();"><img src="img/navDown.png"></a>
+	</div>
+	<div class="two">Scroll
+	  	<a onclick="$.fn.fullpage.moveSectionUp();"><img src="img/navUp.png"></a>
+	</div>
+</div> -->
+<div id="fullpage">
+	<div class="section active" id="section0">
+		<div class="center">
+			<table>
+				<thead>
+					<tr>
+						<td id="nguyen">Nguyen. </td>
+						<td id="vu">Vu</td>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td id="ho">Surname</td>
+						<td id="ten">Forename</td>
+					</tr>
+				</tbody>
+			</table>
+			<div><p>MIS Student | Developer | Analyst</p></div>
+			<div id="click" onclick="getLocation()"><p id="Geo" class="loading"><i>Contact me</i><br><br></p></div>
+			<div class="social">
+				<a href="http://bit.ly/vunguyen-linkedin-git" target="_blank" alt="LinkedIn" class="linkedin-button"><img class="button" alt="LinkedIn" src="img/linkedin_color.png" style="width:64px;height:64px;"></a>
+				<a href="/cdn-cgi/l/email-protection#3754585943565443775950424e5259194142084442555d5254430a7e12050744525953120507435f5e441205075145585a1205075950424e52591941420d" target="_top" alt="Email to contact@nguyen.vu" class="mail-button"><img class="button" alt="Email to contact@nguyen.vu" src="img/mail_color.png" style="width:64px;height:64px;"></a>
+				
+			</div>
+		</div>
+		<div id="bg">
+				<div id="img" onclick="getLocation()"></div>
+				<img id="bgb" src="img/bgb.png">
+				<!-- <img id="bgf" src="img/bgf.png"> -->
+		</div>
+
+	</div>
+<!-- 	<div class="section" id="section1">
+		<div class="slidesNav">
+			<div id="left" style="display:none">
+				<a onclick="$.fn.fullpage.moveSlideLeft();"><img src="img/left.png"></a>
+			</div>
+			<div id="right" style="display:none">
+			  	<a onclick="$.fn.fullpage.moveSlideRight();"><img src="img/right.png"></a>
+			</div>
+		</div>
+		<div class="fade">
+				<h1>Hello there</h1>
+				<p id="Ps" class="loading"><span>.</span><span>.</span><span>.</span></p><br>
+				<button onclick="Acks()">
+					<u><i>Acknowledgements</i></u>
+				</button><br>
+		</div>
+	</div> -->
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript">
+	// window.addEventListener('devicemotion', function(event) {
+	// 	var x = event.acceleration.x;
+	// 	var y = event.acceleration.y;
+	// 	var z = event.acceleration.z;
+
+	// 	var ralpha = event.rotationRate.alpha;
+	// 	var rbeta = 5*Math.round(event.rotationRate.beta);
+	// 	var rgamma = 5*Math.round(event.rotationRate.gamma);
+
+	// 	var interval = event.interval;
+	// 	radius = Math.sqrt(Math.pow(rbeta/10,2) + Math.pow(rgamma/15,2));
+ 	//        degree = (radius * 10);
+	// 	$('#section0').css('-webkit-transform','rotate3d(' + rbeta + ', ' + rgamma + ', 0, ' + degree + 'deg)');
+	// 	$('#section0').css('transform','rotate3d(' + rbeta + ', ' + rgamma + ', 0, ' + degree + 'deg)');
+	// });
+	$(document).ready(function() {
+		if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+		} else {
+			$('body').mousemove(function(event) {
+		        cx = Math.ceil($('body').width() / 2.0);
+		        cy = Math.ceil($('body').height() / 2.0);
+		        dx = event.pageX - cx;
+		        dy = event.pageY - cy;
+		        // console.log(dx, dy);
+		        tilty = -(dy / cy);
+		        tiltx = -(dx / cx);
+		        radius = Math.sqrt(Math.pow(tilty/10,2) + Math.pow(tiltx/15,2));
+		        degree = (radius * 10);
+		        /* Chrome, Safari, Opera */
+				$('#section0').css('-webkit-transform','rotate3d(' + tilty + ', ' + tiltx + ', 0, ' + degree + 'deg)');
+				// console.log("wt",tilty,tiltx)
+				/* Standard syntax */
+				$('#section0').css('transform','rotate3d(' + tilty + ', ' + tiltx + ', 0, ' + degree + 'deg)');
+				// console.log("w",tilty,tiltx)
+		    });
+		};
+	});
+	function Acks(){$("#Acks").css("display","block");$("#Acks").css("padding-top","25%");};
+	function closeA(){$("#Acks").css("display","none");};
+	function idC(){$("#click div").css("display","none");};
+	var cty ="";
+	var ctry="";
+	var geocoder;
+	var x = document.getElementById("Geo");
+	var y = document.getElementById("Ps");
+	var sizeScale=$(window).height()/$(window).width();
+	var tm1;
+	var tm2;
+	var notDone =0;
+	function getLocation() {
+		x.innerHTML="Just a moment!"+"<span>.</span><span>.</span><span>.</span><br><br><br>";
+		idC();
+		tm1 = setTimeout(function(){
+			if (navigator.geolocation) {
+	        navigator.geolocation.getCurrentPosition(showPosition);
+		    } else { 
+		    	x.innerHTML="I cannot find the best way to communitcate right now, but you can still reach me at <br><em><a id="+"mail"+" href="+"mailto:contact@nguyen.vu?subject=I%20send%20this%20from%20nguyen.vu:"+">contact@nguyen.vu</a></em><br>";
+		    };
+		    },1);
+		tm2 = setTimeout(function(){clearTimeout(tm1);x.innerHTML="I cannot find the best way to communitcate right now, but you can still reach me at <br><em><a id="+"mail"+" href="+"mailto:contact@nguyen.vu?subject=I%20send%20this%20from%20nguyen.vu:"+">contact@nguyen.vu</a></em><br>";clearTimeout(tm2);notDone =1;},5000);
+	}
+	function showPosition(position) {
+		geocoder = new google.maps.Geocoder();
+		lat = position.coords.latitude;
+		lon = position.coords.longitude;
+		var latlng = new google.maps.LatLng(lat, lon);
+		if (notDone==0){
+		   	geocoder.geocode({'latLng': latlng}, function gtD(results, status) {
+		      if (status==google.maps.GeocoderStatus.OK) {
+		        if (results[1]) {
+		            for (var i=0; i<results[0].address_components.length; i++) {
+		            for (var b=0;b<results[0].address_components[i].types.length;b++) {
+		                if (results[0].address_components[i].types[b] == "locality") {
+		                    city=results[0].address_components[i];
+		                }
+		                if (results[0].address_components[i].types[b] == "administrative_area_level_2") {
+		                    county=results[0].address_components[i];
+		                }
+		                if (results[0].address_components[i].types[b] == "country") {
+		                    country=results[0].address_components[i];
+		                    break;
+		                }
+		            }
+		        }
+		        cty=city.long_name;
+		        ctry=country.short_name;
+		        clearTimeout(tm2);
+		        tryyyy();
+		        } else {
+		          x.innerHTML="I cannot find best way to communitcate right now, but you can still reach me at"+ "<br>"+"<em>"+"<a id="+"mail"+" href="+"mailto:contact@nguyen.vu?subject=I%20send%20this%20from%20nguyen.vu:"+">contact@nguyen.vu</a>"+"</em>"+"<br>";
+		        }
+		      } else {
+		        x.innerHTML="I cannot find best way to communitcate right now, but you can still reach me at"+ "<br>"+"<em>"+"<a id="+"mail"+" href="+"mailto:contact@nguyen.vu?subject=I%20send%20this%20from%20nguyen.vu:"+">contact@nguyen.vu</a>"+"</em>"+"<br>";
+		      }
+		    });
+		};
+	}
+	function tryyyy(){
+		lat1 = 29.7189;
+		lon1 = -95.3392;
+		var y1 = lat1*Math.PI/180;
+		var y2 = lat*Math.PI/180;
+		var dy = (lat-lat1)*Math.PI/180;
+		var da = (lon-lon1)*Math.PI/180;
+		var a = Math.sin(dy/2)*Math.sin(dy/2)+Math.cos(y1) * Math.cos(y2)*Math.sin(da/2)*Math.sin(da/2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		var d = Math.round(6371 * c);
+		if (d<100){
+			var dc = 5*Math.pow(10,((''+d).length-2));
+		} else {
+			var dc = .5*Math.pow(10,((''+d).length-2));
+		}
+		var dr = Math.ceil((d-.49*dc)/dc)*dc;
+		var sbj="subject=I%20send%20this%20from%20nguyen.vu:";
+		if (dr<2) {
+			str=" Hey "+"<em>"+"Coogs"+"</em>"+"! Do you want to grab a coffee at Starbucks @ Melcher Hall with me?"+"<br>"+"reach me at ";
+			sbj="subject=I%20am%20a%20Coog%20and%20I%20send%20this%20from%20nguyen.vu:";
+		} else if (dr==d) {
+			str="Hello "+"<em>"+cty+"</em>"+"! "+"You are about "+d+" km away from me. You can reach me at"+ "<br>";
+		} else {
+			str="Hello "+"<em>"+cty+"</em>"+"! "+"You are about "+d+" km away from me  but I round to "+dr+". You can reach me at"+ "<br>";
+		}
+		if (ctry=="VN"){
+			y.innerHTML="Tái bút: Xin chào lần nữa, Việt Nam! "+d+" km! Xa quá :P";
+			str="Xin chào "+"<em>"+cty+"</em>"+"! "+"Bạn cách mình tới "+d+" km nhưng mình đã làm tròn thành "+dr+". Bạn có thể gửi thư cho tôi tại"+ "<br>";tôi
+			sbj="subject=Mình%20gửi%20từ%20nguyen.vu:";
+			("#nguyen").innerHTML="Nguyễn";
+			("#vu").innerHTML="Vũ";
+			("#ho").innerHTML="Họ";
+			("#ten").innerHTML="Tên";
+			document.title = "Nguyễn Vũ";
+		} else if (ctry=="US" && cty!="Houston" && cty!="Decorah") {
+			y.innerHTML="P/s: Hello again, USA! When are you going to Texas :)?";
+		} else {
+			switch(cty) {
+	    		case "Decorah":
+	        		y.innerHTML="P/s: Hello Beautitul! Have a nice day :)";
+			        break;
+			    case "Houston":
+			    	if (d<10) {
+			    	y.innerHTML="P/s: Hello again! You go to UH too? Then we have to meet! ";
+			    	} else {
+			        y.innerHTML="P/s: Hello again! We have to meet at UH someday :)!";
+					};
+			        break;
+			    default:
+			        y.innerHTML="P/s: Hello again "+country.long_name+"! Stranger "+d+" km away :)";
+		}	
+		};
+		x.innerHTML=str+"<em>"+"<a id="+"mail"+" href="+"mailto:contact@nguyen.vu?"+sbj+">contact@nguyen.vu</a>"+"</em>";
+		y.innerHTML+="<br>"+"<br>"+"<em>"+"<a id="+"mail"+" href="+"mailto:contact@nguyen.vu?"+sbj+">Send me an email</a>"+"</em>";
+	}
+</script>
+</body>
+</html>
