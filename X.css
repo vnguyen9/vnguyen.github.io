@@ -276,7 +276,7 @@ button {
 	z-index: 999;
 }
 a>img {
-	width: 64px;
+	height: 64px;
 }
 /*.social a {
 	display: block;
